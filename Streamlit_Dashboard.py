@@ -47,7 +47,7 @@ with col1:
     # Filter the DataFrame based on the selected month
     filtered_df = df[df['Month_Text'] == selected_month]
     total_sale = filtered_df['Price'].sum()
-    st.header(f"Total Sale for {selected_month}: ฿{total_sale}")
+    st.header(f"Total Sale for {selected_month}: ${total_sale}")
     # Group by 'Menu' and calculate the total sale for each item
     monthly_sale = filtered_df.groupby('Menu')['Price'].sum().reset_index()
     # Create a bar chart for monthly sales
@@ -62,7 +62,7 @@ with col2:
     filtered_df = df[df['Category'] == selected_Category]
     # Calculate total sale for the selected category
     total_sale = filtered_df['Price'].sum()
-    st.header(f"Total Sale of {selected_Category}: ฿{total_sale}")
+    st.header(f"Total Sale of {selected_Category}: ${total_sale}")
     # Group by day of the week and calculate the count of orders for each day
     daily_sales = filtered_df.groupby('Day_Of_Week')['Category'].count().reset_index()
     # Define the order of days of the week
